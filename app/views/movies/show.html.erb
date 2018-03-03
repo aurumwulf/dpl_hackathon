@@ -10,5 +10,6 @@
 <% @movie.comments.each do |comment| %>
 <p><%= comment.body %></p>
 <%= link_to 'Show', movie_comment_path(@movie, comment) %>
+<% end %>
 </ul>
 <%= link_to 'Back', movies_path %>
