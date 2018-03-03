@@ -4,7 +4,7 @@
 <% genre = @movies.distinct.pluck(:genre) %>
 <% genre.each do |m| %>
   <li>
-    <%= link_to m  %>
+    <%= link_to m, genre_path(genre: m) %>
   </li>
 <% end %>
 </ul>

@@ -1,7 +1,8 @@
 class MoviesController < ApplicationController
-  def show
-    @movie = Movie.find(params[:id])
+  def show_genre
+    @genre = Movie.where(genre: params[:genre])
   end
+
 
   def index
     @movies = Movie.all
