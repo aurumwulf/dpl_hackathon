@@ -1,17 +1,13 @@
-<%= button_to 'Log Out', destroy_user_session_path, method: :delete %>
-<h2>Welcome <%= current_user.first_name %> </h2>
-
-
-<h1>Movie Genres</h1>
+<h1>Welcome <%= current_user.first_name %>!</h1>
+<%= button_to 'Log Out', destroy_user_session_path, method: :delete, class: 'ui tiny button' %>
 <h3>Which Genre of Movies Do You Want To View?</h3>
-<ul>
+
 <% genre = @movies.distinct.pluck(:genre) %>
 <% genre.each do |m| %>
-  <li>
     <%= link_to m, genre_path(genre: m) %>
-  </li>
+    <br />
 <% end %>
-</ul>
+<br />
 <hr />
 <h5>Want To Add Your Own Movie?</h5>
 <%= link_to 'Click Here', new_movie_path %>

@@ -6,9 +6,14 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Voltaire" rel="stylesheet">
   </head>
 
   <body>
-    <%= yield %>
+    <div class="fixed ui center aligned container">
+      <br />
+      <img src="https://vignette.wikia.nocookie.net/logopedia/images/1/1b/Movie_Central.png/revision/latest?cb=20100816062904" width='400' height='200' />
+      <%= yield %>
+    </div>
   </body>
 </html>

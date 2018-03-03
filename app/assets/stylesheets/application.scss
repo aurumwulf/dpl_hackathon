@@ -1,6 +1,13 @@
 @import 'semantic-ui';
 
+html {
+  height: 100%;
+}
 body {
-  background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+  background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
   font-family: 'Voltaire', sans-serif;
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
