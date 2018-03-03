@@ -1,8 +1,14 @@
 <h1><%= @playlist.id ? 'Edit Playlist' : 'Add Playlist' %></h1>
 <br />
+<div class="ui form">
 <%= form_for [@playlist] do |f| %>
+  <div class="field">
   <%= f.label :name %>
   <%= f.text_area :name, required: true %>
+  </div>
   <br />
-  <%= f.submit %>
+  <div class="actions">
+    <%= f.submit "Submit", :class => 'ui tiny button' %>
+  </div>
 <% end %>
+</div>
