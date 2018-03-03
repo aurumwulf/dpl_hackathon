@@ -1,0 +1,6 @@
+<h1><%= @playlist.name %></h1>
+<%= link_to "Delete Playlist", playlist_path(@playlist), method: :delete %>
+<%= link_to "Add Movies To Playlist", adding_path(@playlist.id) %>
+<% @movies.each do |m| %>
+<p><%= m.title %></p>
+<% end %>

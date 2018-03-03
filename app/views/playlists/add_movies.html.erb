@@ -1,0 +1,9 @@
+<% @movies.each do |m| %>
+  <% if m.playlist_id.to_s == params[:playlist_id]%>
+    <h3><%= m.title %></h3>
+    <button> Remove From List </button>
+  <% else %>
+    <h3><%= m.title %></h3>
+    <button> Add To List </button>
+  <% end %>
+<% end %>

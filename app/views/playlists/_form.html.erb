@@ -1,0 +1,8 @@
+<h1><%= @playlist.id ? 'Edit Playlist' : 'Add Playlist' %></h1>
+<br />
+<%= form_for [@playlist] do |f| %>
+  <%= f.label :name %>
+  <%= f.text_area :name, required: true %>
+  <br />
+  <%= f.submit %>
+<% end %>
