@@ -1,4 +1,4 @@
-<h1>%= @comment.id? 'Add Comment' : 'Edit Comment' %></h1>
+<h1><%= @comment.id ? 'Edit Comment' : 'Add Comment' %></h1>
 <br />
 <%= form_for [@movie, @comment] do |f| %>
   <%= f.label :body %>

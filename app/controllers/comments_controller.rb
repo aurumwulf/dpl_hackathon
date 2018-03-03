@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
-  before_action :set_movie
-  before_action :comment_params, only: (:show, :edit, :update, :destroy)
+  before_action :set_movie 
+  before_action :comment_params, only: [:show, :edit, :update, :destroy]
 
   def index
     #TODO user_profile
@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
     @comment = @movie.comments.new(comment_params)
     
     if @comment.save
-    #TODO redirect_to movie_path(@movie)
+      redirect_to movie_path(@movie)
     else
       render :new
     end
@@ -29,7 +29,7 @@ class CommentsController < ApplicationController
 
   def update
     if @comment.update(comment_params)
-    #TODO redirect_to movie_path(@movie)
+      redirect_to movie_path(@movie)
     else 
       render :edit
     end
@@ -37,7 +37,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment.destroy
-    #TODO redirect_to movie_path(@movie)
+    redirect_to movie_path(@movie)
   end
 
   private
@@ -50,6 +50,6 @@ class CommentsController < ApplicationController
     end
 
     def set_movie
-      @movie = Movies.find(params[:movie_id])
+      @movie = Movie.find(params[:id])
     end
 end
