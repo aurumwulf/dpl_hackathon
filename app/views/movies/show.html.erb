@@ -6,13 +6,24 @@
 <a href="<%= @movie.description%>" target="_blank">IMDB Profile Page.</a>
 <br />
 <%= link_to 'Create Comment', new_movie_comment_path(@movie) %>
+<div class="ui feed">
+  <div class="event">
+    <div class="label">
+      <i class="pencil icon"></i>
+    </div>
+    <div class="content">
+      <div class="summary">
 <ul>
 <% @movie.comments.each do |comment| %>
 <p><%= comment.body %></p>
+</ul>
+      </div>
+    </div>
+  </div>
+</div>
+<%= link_to 'Back', movies_path %>
 <%= link_to 'Show', movie_comment_path(@movie, comment) %>
 <% end %>
-</ul>
-<%= link_to 'Back', movies_path %>
 
 
 <hr  />
