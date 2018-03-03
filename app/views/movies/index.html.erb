@@ -1,2 +1,10 @@
 <h1>Movie Genres</h1>
 <h3>Which Genre of Movies Do You Want To View?</h3>
+<ul>
+<% genre = @movies.distinct.pluck(:genre) %>
+<% genre.each do |m| %>
+  <li>
+    <%= link_to m  %>
+  </li>
+<% end %>
+</ul>
