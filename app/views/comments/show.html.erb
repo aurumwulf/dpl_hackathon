@@ -1,4 +1,6 @@
 <p><%= @comment.body %></p>
-<% link_to 'Edit Comment', edit_movie_comment_path[@movie, @comment] %>
-<% link_to 'Delete Comment', [@movie, @comment], method: :delete %>
-<% link_to 'Back', movie_path(@movie) %>
+<% movie = @movie.id.to_i %>
+<% comment = @comment.id.to_i %>
+<%= link_to 'Edit Comment', edit_movie_comment_path[movie, comment] %>
+<%= link_to 'Delete Comment', movie_comment_path[movie, comment], method: :delete %>
+<%= link_to 'Back', movie_path(movie) %>

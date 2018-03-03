@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 <h1><%= @movie.title %></h1>
 <h4><%= @movie.duration %></h4>
 <h4><%= @movie.genre %></h4>
@@ -11,5 +9,5 @@
 
 <% @movie.comments.each do |comment| %>
 <p><%= comment.body %></p>
+<%= link_to 'Show', movie_comment_path(@movie, comment) %>
 <% end %>
->>>>>>> comments
