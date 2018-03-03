@@ -15,7 +15,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = @movie.comments.new(comment_params)
-    
+
     if @comment.save
       redirect_to movie_path(@movie)
     else
@@ -42,7 +42,7 @@ class CommentsController < ApplicationController
 
   private
     def comment_params
-      params.require(:comment).permit(:body, :movie_id, :user_id)
+      params.require(:comment).permit(:body)
     end
 
     def set_comment

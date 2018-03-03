@@ -6,8 +6,7 @@
 <a href="<%= @movie.description%>" target="_blank">IMDB</a>
 <br />
 <%= link_to 'Create Comment', new_movie_comment_path(@movie) %>
-
+<br />
 <% @movie.comments.each do |comment| %>
-<p><%= comment.body %></p>
-<%= link_to 'Show', movie_comment_path(@movie, comment) %>
+<%= link_to comment.body, movie_comment_path(@movie, comment) %>
 <% end %>
