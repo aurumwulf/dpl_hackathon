@@ -30,7 +30,7 @@ class CommentsController < ApplicationController
   def update
     if @comment.update(comment_params)
       redirect_to movie_path(@movie)
-    else 
+    else
       render :edit
     end
   end
