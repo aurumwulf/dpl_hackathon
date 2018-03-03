@@ -1,0 +1,22 @@
+<h1><%= @movie.id ? 'Edit Movie' : 'Add Movie' %></h1>
+<br />
+<%= form_for @movie do |f| %>
+  <%= f.label :title %>
+  <%= f.text_area :title, required: true %>
+  <br  />
+  <%= f.label :duration %>
+  <%= f.text_area :duration, required: true %>
+  <br  />
+  <%= f.label :genre %>
+  <%= f.select :genre, ['Drama', 'Comedy', 'Action'] %>
+  <br />
+  <%= f.label :description %>
+  <%= f.text_area :description, required: true %>
+  <br  />
+  <%= f.label :trailer %>
+  <%= f.text_area :trailer, required: true %>
+  <p>Please enter the embedded link for the trailer/movie.</p>
+
+  <hr />
+  <%= f.submit %>
+<% end %>

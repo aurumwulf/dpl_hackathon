@@ -13,3 +13,8 @@
 <% end %>
 </ul>
 <%= link_to 'Back', movies_path %>
+
+
+<hr  />
+<%= link_to 'Edit Movie', edit_movie_path(@movie) %>
+<%= link_to 'Remove Movie', @movie, method: :delete %>
