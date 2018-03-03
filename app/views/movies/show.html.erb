@@ -1,19 +1,20 @@
-<hr  />
-<%= link_to 'Edit Movie', edit_movie_path(@movie) %>
-<%= link_to 'Remove Movie', @movie, method: :delete %>
+<h1><%= @movie.title %></h1>
+<h4>Genre: <%= @movie.genre %> <br /> Duration: <%= @movie.duration %></h4>
+<iframe src="<%= @movie.trailer %>"></iframe>
+<br />
+<br />
 <a href="<%= @movie.description%>" target="_blank">IMDB Profile</a>
 <br />
 <br />
-<div class="label">
-    <i class="pencil icon">
-        <%= link_to 'Edit Movie', edit_movie_path(@movie) %> / 
-    </i>
-</div>
+<%= link_to 'Edit Movie', edit_movie_path(@movie) %> / 
 <%= link_to 'Remove Movie', @movie, method: :delete %> /
 <%= link_to 'Create Comment', new_movie_comment_path(@movie) %> /
 <%= link_to 'Back', movies_path %>
 <hr />
 <br />
 <% @movie.comments.each do |comment| %>
+<div class="label">
+  <i class="pencil icon"></i>
 <p><%= comment.body %> - <%= current_user.first_name %> <%= current_user.last_name %><br /><%= link_to 'Show', movie_comment_path(@movie, comment) %></p>
 <% end %>
+</div>
